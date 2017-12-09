@@ -20,9 +20,10 @@ var port = new SerialPort(MICROBIT_PORT, {
   baudRate: 115200,
   parser: SerialPort.parsers.readline('\n')
 }, function(err) {
-  if (err)
-    return console.log('Error: ', err.message);
-  console.log('connected');
+  if (err) {
+    console.error(err.message);
+    process.exit(1);
+  }else console.log('connected');
 });
 
 var sum = 0;
@@ -40,7 +41,7 @@ port.on('data', function(data) {
 });
 
 // use here fogFun or fogFun2
-fog.startFog(fogFun2, UPDATE_TIME);
+fog.runEvery(fogFun2, UPDATE_TIME);
 
 // Fist filter function
 function fogFun() {
