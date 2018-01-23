@@ -57,7 +57,7 @@ const THRESHOLD = 30;
 function fogFun2() {
   var avg = sum / n;
   if (Math.abs(previous - avg) > THRESHOLD)
-    fog.pushData(`$URL${MOISTURE}=${avg}`);
+    fog.pushData(`${MOISTURE}=${avg}`);
   else
     console.log('I will not waste the cloud time!');
   previous = avg;
