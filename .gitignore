@@ -1,4 +1,8 @@
+# Node
 node_modules/
+
+# Python
 __pycache__/
 venv/
 *.pyc
+.tool-versions
